@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dai - Sblordiplox.</title>
+        <link href="css/output.css" rel="stylesheet">
+    </head>
+    <body class="bg-black grid place-items-center h-screen">
+        <div class="flex flex-col max-w-xs w-5/6">
+            <a href="index.html" class="font-bold text-green self-end">Torna Indietrol</a>
+            <h3 id="autore" class="font-semibold text-white">loading</h3>
+            <h1 class="text-4xl text-white font-black"><span id="titolo">LOADING</span><span class="text-green">.</span></h1>
+            
+            <div id="testo" class="mt-6 flex flex-col max-h-[40vh] overflow-y-auto max-w-full">
+            </div>
+
+            <button disabled onclick="condividi()" id="condividi" class="mt-6 text-white font-bold text-xl bg-green rounded-md py-4 disabled:opacity-60 disabled:cursor-not-allowed">Scarica Bene</button>
+        </div>
+    </body>
+
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        
+        const canzone = urlParams.get("canzone")
+        const autore = urlParams.get("autore")
+
+        const titolo_text = document.getElementById("titolo")
+        const autore_text = document.getElementById("autore")
+        
+
+        const testo = document.getElementById("testo")
+        const url = 'https://sblordex.drugdeal.us/'
+        
+        let song_id
+        let titolo_vero
+        let autore_vero
+        let lyrics = []
+        fetch(`${url}/lyrics?t=${canzone}&a=${autore}`).then(res => res.json())
+        .then(data => {
+            song_id = data.song_id
+            lyrics = data.lyrics
+            titolo_vero = data.title
+            autore_vero = data.author
+            titolo_text.textContent = data.title
+            autore_text.textContent = data.author
+            data.lyrics.forEach((verso, idx) => {
+                testo.insertAdjacentHTML( 'beforeend', `
+                    <button 
+                        class="mb-2 text-white text-left font-semibold break-before-all"
+                        id="${idx}" onclick="select(this)"
+                    >
+                        ${verso}
+                    </button>
+                    ` )
+            })
+        })
+        
+        let array_index_dai = []
+        const condividi_btn = document.getElementById("condividi")
+        const select = (element) => {
+            id = parseInt(element.id)
+            if (element.classList.toString().includes("text-green")) {
+                const index = array_index_dai.indexOf(id);
+                if (index > -1) {
+                    array_index_dai.splice(index, 1);
+                }
+            }
+            else array_index_dai.push(id)
+
+            element.classList.toggle("text-green");
+            element.classList.toggle("text-white");
+            element.classList.toggle("font-extrabold");
+            element.classList.toggle("text-semibold");
+            
+            condividi_btn.disabled = array_index_dai.length <= 0
+        }
+
+        const condividi = async () => {
+            let lyrics_selezionati = []
+            array_index_dai.sort().forEach(id => lyrics_selezionati.push(lyrics[id]))
+
+            const res = await fetch(`${url}/share?song_id=${song_id}`, {
+                method: "POST",
+                body: JSON.stringify(lyrics_selezionati),
+                headers: {
+                        "Content-Type": "application/json",
+                },
+            })
+
+            const blob = await res.blob();
+            const img_url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = img_url;
+            a.download = `${titolo_vero}-${autore_vero}.jpg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        </script>
+    </html>
