@@ -8,14 +8,14 @@
     </head>
     <body class="bg-black grid place-items-center h-screen">
         <div class="flex flex-col max-w-xs w-5/6">
-            <a href="index.html" class="font-bold text-green self-end">Torna Indietrol</a>
+            <a href="index.html" class="font-bold text-primary self-end">Torna Indietrol</a>
             <h3 id="autore" class="font-semibold text-white">loading</h3>
-            <h1 class="text-4xl text-white font-black"><span id="titolo">LOADING</span><span class="text-green">.</span></h1>
+            <h1 class="text-4xl text-white font-black"><span id="titolo">LOADING</span><span class="text-primary">.</span></h1>
             
             <div id="testo" class="mt-6 flex flex-col max-h-[40vh] overflow-y-auto max-w-full">
             </div>
 
-            <button disabled onclick="condividi()" id="condividi" class="mt-6 text-white font-bold text-xl bg-green rounded-md py-4 disabled:opacity-60 disabled:cursor-not-allowed">Scarica Bene</button>
+            <button disabled onclick="condividi()" id="condividi" class="mt-6 text-white font-bold text-xl bg-primary rounded-md py-4 disabled:opacity-60 disabled:cursor-not-allowed">Scarica Bene</button>
         </div>
     </body>
 
@@ -61,7 +61,7 @@
         const condividi_btn = document.getElementById("condividi")
         const select = (element) => {
             id = parseInt(element.id)
-            if (element.classList.toString().includes("text-green")) {
+            if (element.classList.toString().includes("text-primary")) {
                 const index = array_index_dai.indexOf(id);
                 if (index > -1) {
                     array_index_dai.splice(index, 1);
@@ -69,15 +69,19 @@
             }
             else array_index_dai.push(id)
 
-            element.classList.toggle("text-green");
+            element.classList.toggle("text-primary");
             element.classList.toggle("text-white");
             element.classList.toggle("font-extrabold");
             element.classList.toggle("text-semibold");
             
             condividi_btn.disabled = array_index_dai.length <= 0
         }
+        
 
         const condividi = async () => {
+            condividi_btn.disabled = true
+            condividi_btn.textContet = "Loading"
+
             let lyrics_selezionati = []
             array_index_dai.sort().forEach(id => lyrics_selezionati.push(lyrics[id]))
 
@@ -98,6 +102,10 @@
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+
+
+            condividi_btn.disabled = false
+            condividi_btn.textContet = "Scarica Bene"
         }
         </script>
     </html>

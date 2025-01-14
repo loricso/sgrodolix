@@ -10,7 +10,7 @@
 
 @layer components {
     *::selection {
-        @apply bg-green text-white
+        @apply bg-primary text-white
     }
 }
 

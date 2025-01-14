@@ -3,9 +3,9 @@ module.exports = {
     content: ["./src/**/*.{html,js}"],
     theme: {
         colors: {
-            "black": "#191414",
+            "black": "#171717",
             "white": "#fefefe",
-            "green": "#1DB954"
+            "primary": "#775DDD"
         }
     },
     plugins: [],
