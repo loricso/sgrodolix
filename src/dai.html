@@ -31,7 +31,7 @@
         
 
         const testo = document.getElementById("testo")
-        const url = 'https://sblordex.drugdeal.us/'
+        const url = 'https://sgrodolix.website/api'
         
         let song_id
         let titolo_vero
@@ -80,7 +80,7 @@
 
         const condividi = async () => {
             condividi_btn.disabled = true
-            condividi_btn.textContet = "Loading"
+            condividi_btn.textContent = "Loading"
 
             let lyrics_selezionati = []
             array_index_dai.sort().forEach(id => lyrics_selezionati.push(lyrics[id]))
@@ -105,7 +105,7 @@
 
 
             condividi_btn.disabled = false
-            condividi_btn.textContet = "Scarica Bene"
+            condividi_btn.textContent = "Scarica Bene"
         }
         </script>
     </html>
