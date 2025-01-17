@@ -590,6 +590,10 @@ video {
   margin-top: 2rem;
 }
 
+.mb-20{
+  margin-bottom: 5rem;
+}
+
 .flex{
   display: flex;
 }
@@ -604,6 +608,10 @@ video {
 
 .max-h-\[40vh\]{
   max-height: 40vh;
+}
+
+.max-h-\[60vh\]{
+  max-height: 60vh;
 }
 
 .w-5\/6{
@@ -637,6 +645,15 @@ video {
 
 .overflow-y-auto{
   overflow-y: auto;
+}
+
+.hyphens-auto{
+  -webkit-hyphens: auto;
+          hyphens: auto;
+}
+
+.break-all{
+  word-break: break-all;
 }
 
 .rounded-md{
