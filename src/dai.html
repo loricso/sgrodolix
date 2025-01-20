@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dai - Sblordiplox.</title>
+        <title>Dai - Sgrodolix.</title>
         <link href="css/output.css" rel="stylesheet">
     </head>
     <body class="bg-black grid place-items-center h-screen">
@@ -12,8 +12,16 @@
             <h3 id="autore" class="font-semibold text-white">loading</h3>
             <h1 class="text-4xl text-white font-black break-all"><span id="titolo">LOADING</span><span class="text-primary">.</span></h1>
             
-            <div id="testo" class="mt-6 flex flex-col max-h-[60vh] overflow-y-auto max-w-full">
+            <div id="testo" class="mt-6 flex flex-col max-h-[45vh] overflow-y-auto max-w-full">
             </div>
+
+            <!-- <div>
+                <input type="radio" name="color" class=" after:bg-primary after:aspect-square after:w-4 after:h-4">
+                <input type="radio" name="color">
+                <input type="radio" name="color">
+                <input type="radio" name="color">
+                </div> -->
+
 
             <button disabled onclick="condividi()" id="condividi" class="mt-6 text-white font-bold text-xl bg-primary rounded-md py-4 disabled:opacity-60 disabled:cursor-not-allowed">Scarica Bene</button>
         </div>
@@ -48,7 +56,7 @@
             data.lyrics.forEach((verso, idx) => {
                 testo.insertAdjacentHTML( 'beforeend', `
                     <button 
-                        class="mb-2 text-white text-left font-semibold break-before-all"
+                        class="mb-2 hover:text-primary hover:opacity-60 text-white text-left font-semibold break-before-all"
                         id="${idx}" onclick="select(this)"
                     >
                         ${verso}
