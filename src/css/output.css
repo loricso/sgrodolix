@@ -751,15 +751,6 @@ video {
   background-color: rgb(61 106 189 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:text-primary:hover{
-  --tw-text-opacity: 1;
-  color: rgb(61 106 189 / var(--tw-text-opacity, 1));
-}
-
-.hover\:opacity-60:hover{
-  opacity: 0.6;
-}
-
 .disabled\:cursor-not-allowed:disabled{
   cursor: not-allowed;
 }

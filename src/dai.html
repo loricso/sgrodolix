@@ -36,20 +36,27 @@
         const autore = urlParams.get("autore")
 
         const testo = document.getElementById("testo")
+        const titolo_text = document.getElementById("titolo")
+        const autore_text = document.getElementById("autore")
         const url = 'https://sgrodolix.website/api'
         
+
         let song_id
         let titolo_vero
         let autore_vero
         let lyrics = []
+
         fetch(`${url}/lyrics?t=${canzone}&a=${autore}`).then(res => res.json())
         .then(data => {
             song_id = data.song_id
             lyrics = data.lyrics
+            
             titolo_vero = data.title
             autore_vero = data.author
+            
             titolo_text.textContent = data.title
             autore_text.textContent = data.author
+            
             data.lyrics.forEach((verso, idx) => {
                 testo.insertAdjacentHTML( 'beforeend', `
                     <button 
@@ -101,14 +108,15 @@
             const blob = await res.blob();
             const img_url = URL.createObjectURL(blob);
             const a = document.createElement('a');
+
             a.href = img_url;
             a.download = `${titolo_vero}-${autore_vero}.jpg`;
             document.body.appendChild(a);
+            
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-
-
+            
             condividi_btn.disabled = false
             condividi_btn.textContent = "Scarica Bene"
         }
