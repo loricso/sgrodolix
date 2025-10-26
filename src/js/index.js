@@ -22,14 +22,13 @@ fetch(`${url}/lyrics?t=${urlParams.get("title")}&a=${urlParams.get("author")}`).
     author_element.textContent = data.author
 
     lyrics.forEach((verse, idx) => {
-        lyrics_element.insertAdjacentHTML( 'beforeend', `
-            <button 
-                class="mb-2 md:hover:bg-primary md:hover:bg-opacity-60 text-white text-left font-semibold break-before-all"
-                id="${idx}" onclick="on_select(this)"
-            >
-                ${verse}
-            </button>
-            ` )
+        const button = document.createElement('button');
+        button.className = 'mb-2 md:hover:bg-primary md:hover:bg-opacity-60 text-white text-left font-semibold break-before-all';
+
+        button.id = idx;
+        button.onclick = () => on_select(button);
+        button.innerText = verse;
+        lyrics_element.appendChild(button);
     })
 })
 
@@ -61,7 +60,7 @@ const share = async () => {
     share_btn.textContent = "Loading"
 
     let selected_lyrics = []
-    selected_ids.sort().forEach(id => selected_lyrics.push(lyrics[id]))
+    selected_ids.sort((a, b) => a - b).forEach(id => selected_lyrics.push(lyrics[id]))
 
     const res = await fetch(`${url}/share?song_id=${song_id}&color=9012f3`, {
         method: "POST",
