@@ -1,34 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Sgrodolix.</title>
-        <link href="css/output.css" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
-    </head>
-    <body class="bg-black grid place-items-center h-screen">
-        <form id="form" action="lyrics.html" class="flex flex-col max-w-xs w-5/6">
-            <h1 class="text-4xl text-white font-black">Sgrodolix<span class="text-primary">.</span></h1>
-            
-            <label for="title" class="mt-6 ml-2 text-white text-md font-semibold">Canzone</label>
-            <input
-                type="text" name="title" placeholder="Smells Like Teen Spirit" id="title" required
-                class="py-3 px-4 rounded-md outline-none text-black font-medium"
-            >
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Sgrodolix.</title>
+		<link href="css/output.css" rel="stylesheet" />
+		<link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+	</head>
+	<body class="p-6 bg-black h-screen relative">
+		<h1 class="absolute text-2xl text-white font-black">
+			Sgrodolix<span class="text-primary">.</span>
+		</h1>
 
-            <label for="author" class="mt-3 ml-2 text-white text-md font-semibold">Autore</label>
-            <input
-                type="text" name="author" placeholder="Gue" id="author" required
-                class="py-3 px-4 rounded-md outline-none text-black font-medium"
-            >
-            
-            <button class="mt-8 text-white font-bold text-xl bg-primary rounded-md py-4">Cerca al Volo</button>
-            <p class="mt-2 text-white font-medium"> Crediti:
-                <a class="font-bold text-primary" href="https://github.com/loricso">loricso</a>,
+		<div class="grid place-items-center h-full">
+			<form
+				id="form"
+				action="lyrics.html"
+				class="flex flex-col max-w-sm w-full mb-12"
+			>
+				<h3 class="text-4xl sm:text-5xl text-white font-bold">
+					Quale Canzone Vorresti Condividere<span
+						class="text-primary font-black"
+						>?</span
+					>
+				</h3>
 
-                <a class="font-bold text-primary" href="https://github.com/PoulDev">PoulDev</a>
-            </p>
-        </form>
-    </body>
+				<label
+					for="title"
+					class="mt-6 ml-2 text-white text-md font-semibold"
+					>Canzone</label
+				>
+				<input
+					type="text"
+					name="title"
+					placeholder="Smells Like Teen Spirit"
+					id="title"
+					required
+					class="w-full py-3 px-4 rounded-md outline-none text-black font-medium"
+				/>
+
+				<label
+					for="author"
+					class="mt-3 ml-2 text-white text-md font-semibold"
+					>Autore</label
+				>
+				<input
+					type="text"
+					name="author"
+					placeholder="Gue"
+					id="author"
+					required
+					class="py-3 px-4 rounded-md outline-none text-black font-medium"
+				/>
+
+				<button
+					class="mt-6 text-white font-bold text-xl bg-primary rounded-md py-4"
+				>
+					Cerca al Volo
+				</button>
+				<p class="mt-2 text-white font-semibold">
+					Crediti:
+					<a
+						class="font-bold text-primary"
+						href="https://github.com/loricso"
+						>loricso</a
+					>,
+
+					<a
+						class="font-bold text-primary"
+						href="https://github.com/PoulDev"
+						>PoulDev</a
+					>
+				</p>
+				<p class="mt-1 text-white font-semibold">
+					BIG NIUS:
+					<a
+						class="text-primary font-semibold"
+						href="https://github.com/loricso/sgrodolix-native/releases/latest"
+						>Scarica l'App</a
+					>!!!
+				</p>
+			</form>
+		</div>
+	</body>
 </html>
