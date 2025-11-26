@@ -62,7 +62,7 @@ const share = async () => {
     let selected_lyrics = []
     selected_ids.sort((a, b) => a - b).forEach(id => selected_lyrics.push(lyrics[id]))
 
-    const res = await fetch(`${url}/share?song_id=${song_id}&color=9012f3`, {
+    const res = await fetch(`${url}/share?song_id=${song_id}`, {
         method: "POST",
         body: JSON.stringify(selected_lyrics),
         headers: {
