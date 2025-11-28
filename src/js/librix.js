@@ -25,7 +25,7 @@ const share = async () => {
     const img_url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = img_url;
-    a.download = `${title}-${author}.jpg`;
+    a.download = `${title.value}-${author.value}.jpg`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
