@@ -3,8 +3,7 @@ const title = document.getElementById('title')
 const author = document.getElementById('author')
 const sharebtn = document.getElementById('share');
 
-//const url = 'https://sgrodolix.website/api'
-const url = 'http://127.0.0.1:2000/api'
+const url = 'https://sgrodolix.website/api'
 
 textarea.addEventListener('input', () => {
     textarea.style.height = 'auto';
