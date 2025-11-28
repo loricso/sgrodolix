@@ -33,5 +33,5 @@ const share = async () => {
 
 
     sharebtn.disabled = false
-    sharebtn.textContent = "Scarica Bene"
+    sharebtn.textContent = "Scarica"
 }
