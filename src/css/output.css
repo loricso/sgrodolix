@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-black: #171717;
     --color-white: #fefefe;
     --spacing: 0.25rem;
@@ -223,6 +225,9 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
+  .ml-auto {
+    margin-left: auto;
+  }
   .contents {
     display: contents;
   }
@@ -247,6 +252,9 @@
   .w-5\/6 {
     width: calc(5/6 * 100%);
   }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
+  }
   .w-full {
     width: 100%;
   }
@@ -258,6 +266,12 @@
   }
   .max-w-xs {
     max-width: var(--container-xs);
+  }
+  .resize-none {
+    resize: none;
+  }
+  .appearance-none {
+    appearance: none;
   }
   .break-before-all {
     break-before: all;
@@ -271,6 +285,9 @@
   .self-end {
     align-self: flex-end;
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .overflow-y-auto {
     overflow-y: auto;
   }
@@ -283,6 +300,9 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .bg-primary {
     background-color: var(--color-primary);
   }
@@ -292,11 +312,17 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
   }
   .text-left {
     text-align: left;
@@ -337,6 +363,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-wrap {
+    text-wrap: wrap;
+  }
   .break-all {
     word-break: break-all;
   }
@@ -348,6 +377,12 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .outline-none {
     --tw-outline-style: none;
@@ -386,7 +421,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 * {
-  font-family: Inter;
+  font-family: "Inter";
 }
 ::selection {
   background: var(--color-primary);

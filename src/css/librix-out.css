@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-black: #171717;
     --color-white: #fefefe;
     --spacing: 0.25rem;
@@ -247,20 +249,8 @@
   .max-h-\[45vh\] {
     max-height: 45vh;
   }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
   .w-5\/6 {
     width: calc(5/6 * 100%);
-  }
-  .w-15 {
-    width: calc(var(--spacing) * 15);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-  .w-50 {
-    width: calc(var(--spacing) * 50);
   }
   .w-60 {
     width: calc(var(--spacing) * 60);
@@ -279,6 +269,9 @@
   }
   .resize-none {
     resize: none;
+  }
+  .appearance-none {
+    appearance: none;
   }
   .break-before-all {
     break-before: all;
@@ -307,11 +300,11 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
   .bg-primary {
     background-color: var(--color-primary);
-  }
-  .p-0 {
-    padding: calc(var(--spacing) * 0);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -322,17 +315,11 @@
   .py-0 {
     padding-block: calc(var(--spacing) * 0);
   }
-  .py-2 {
-    padding-block: calc(var(--spacing) * 2);
-  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
-  }
-  .pt-3 {
-    padding-top: calc(var(--spacing) * 3);
   }
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
@@ -434,7 +421,7 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 * {
-  font-family: Inter;
+  font-family: "Averia Serif Libre";
 }
 body {
   background-image: url('../assets/texture.jpg');
