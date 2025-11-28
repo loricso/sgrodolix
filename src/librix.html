@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Lyrics - Sgrodolix.</title>
+		<link href="css/librix-out.css" rel="stylesheet" />
+		<link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+	</head>
+	<body class="p-6 h-screen relative">
+		<h1 class="absolute text-2xl text-black font-black">
+			Sgrodolibrix<span class="text-primary">.</span>
+		</h1>
+
+		<div class="grid place-items-center h-full">
+			<div class="mb-8 flex flex-col max-w-sm md:max-w-lg w-full">
+				<h1 class="text-4xl text-black font-black">
+					<span class="text-wrap">Scrivi la tua citazione</span
+					><span class="text-primary">.</span>
+				</h1>
+
+                <textarea placeholder="Se n’i mondo esistesse..." id="lyrics" class="mt-6 w-full py-0 outline-none resize-none text-black font-medium italic overflow-hidden"></textarea>
+
+                <h3 class="font-semibold pt-5">Autore (opzionale)</h3>
+                <input id="author" type="text" placeholder="Pietro Pacciani" id="author" class="mt-3 w-full py-0 outline-none text-black font-medium"/>
+
+                <h3 class="font-semibold pt-5">Titolo (opzionale)</h3>
+                <input id="title" type="text" placeholder="Raccolta Poesie" id="author" class="mt-3 w-full py-0 outline-none text-black font-medium"/>
+
+
+				<button
+					disabled
+					onclick="share()"
+					id="share"
+					class="mt-6 w-60 ml-auto text-black font-bold underline text-xl py-4 disabled:opacity-60 disabled:cursor-not-allowed"
+				>
+					Scarica
+				</button>
+
+			</div>
+		</div>
+	</body>
+
+	<script src="js/librix.js"></script>
+</html>

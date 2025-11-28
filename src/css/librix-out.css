@@ -32,7 +32,7 @@
     --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary: #3D6ABD;
+    --color-primary: #F3A718;
   }
 }
 @layer base {
@@ -223,6 +223,9 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
+  .ml-auto {
+    margin-left: auto;
+  }
   .contents {
     display: contents;
   }
@@ -244,8 +247,23 @@
   .max-h-\[45vh\] {
     max-height: 45vh;
   }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
   .w-5\/6 {
     width: calc(5/6 * 100%);
+  }
+  .w-15 {
+    width: calc(var(--spacing) * 15);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-50 {
+    width: calc(var(--spacing) * 50);
+  }
+  .w-60 {
+    width: calc(var(--spacing) * 60);
   }
   .w-full {
     width: 100%;
@@ -259,6 +277,9 @@
   .max-w-xs {
     max-width: var(--container-xs);
   }
+  .resize-none {
+    resize: none;
+  }
   .break-before-all {
     break-before: all;
   }
@@ -270,6 +291,9 @@
   }
   .self-end {
     align-self: flex-end;
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .overflow-y-auto {
     overflow-y: auto;
@@ -286,17 +310,32 @@
   .bg-primary {
     background-color: var(--color-primary);
   }
+  .p-0 {
+    padding: calc(var(--spacing) * 0);
+  }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .py-0 {
+    padding-block: calc(var(--spacing) * 0);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
   }
   .text-left {
     text-align: left;
@@ -337,6 +376,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .text-wrap {
+    text-wrap: wrap;
+  }
   .break-all {
     word-break: break-all;
   }
@@ -348,6 +390,12 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .italic {
+    font-style: italic;
+  }
+  .underline {
+    text-decoration-line: underline;
   }
   .outline-none {
     --tw-outline-style: none;
@@ -387,6 +435,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 * {
   font-family: Inter;
+}
+body {
+  background-image: url('../assets/texture.jpg');
+  background-repeat: repeat;
+  background-size: auto;
 }
 ::selection {
   background: var(--color-primary);

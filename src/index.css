@@ -1,15 +1,14 @@
 @import "tailwindcss";
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @theme {
-  --color-primary: #3D6ABD;
+  --color-primary: #3D6ABD; /* your primary color */
   --color-white: #fefefe;
   --color-black: #171717;
 }
 
 * {
-    font-family: Inter;
+    font-family: "Inter";
 }
 
 ::selection {
