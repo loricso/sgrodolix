@@ -5,41 +5,62 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Lyrics - Sgrodolix.</title>
 		<link href="css/librix-out.css" rel="stylesheet" />
-		<link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="./assets/favicon-librix.png"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body class="p-6 h-screen relative">
-		<h1 class="absolute text-2xl text-black font-black">
+		<h1 class="h-limit absolute text-2xl text-black font-black">
 			Sgrodolibrix<span class="text-primary">.</span>
 		</h1>
 
 		<div class="grid place-items-center h-full">
-			<div class="mb-8 flex flex-col max-w-sm md:max-w-lg w-full">
-				<h1 class="text-4xl text-black font-black">
+			<div class="flex flex-col max-w-sm md:max-w-lg w-full">
+				<h1 class="text-4xl sm:text-5xl text-black font-black">
 					<span class="text-wrap">Scrivi la tua citazione</span
 					><span class="text-primary">.</span>
 				</h1>
 
-                <textarea placeholder="Se n’i mondo esistesse..." id="lyrics" class="mt-6 w-full py-0 outline-none resize-none text-black font-medium italic overflow-hidden"></textarea>
+				<textarea
+					placeholder="Se n’i mondo esistesse..."
+					id="lyrics"
+					class="text-xl sm:text-2xl mt-6 w-full outline-none resize-none text-black font-medium italic overflow-hidden"
+				></textarea>
 
-                <h3 class="font-semibold pt-5">Autore (opzionale)</h3>
-                <input id="author" type="text" placeholder="Pietro Pacciani" id="author" class="mt-3 w-full py-0 outline-none text-black font-medium"/>
+				<h3 class="text-2xl sm:text-3xl font-semibold mt-6">Autore (opzionale)</h3>
+				<input
+					id="author"
+					type="text"
+					placeholder="Pietro Pacciani"
+					id="author"
+					class="text-lg sm:text-xl mt-3 w-full py-0 outline-none text-black font-medium"
+				/>
 
-                <h3 class="font-semibold pt-5">Titolo (opzionale)</h3>
-                <input id="title" type="text" placeholder="Raccolta Poesie" id="author" class="mt-3 w-full py-0 outline-none text-black font-medium"/>
-
+				<h3 class="text-2xl sm:text-3xl font-semibold mt-6">Titolo (opzionale)</h3>
+				<input
+					id="title"
+					type="text"
+					placeholder="Raccolta Poesie"
+					id="author"
+					class="text-lg sm:text-xl mt-3 w-full py-0 outline-none text-black font-medium"
+				/>
 
 				<button
 					disabled
 					onclick="share()"
 					id="share"
-					class="mt-6 w-40 ml-auto text-black font-bold underline text-xl py-4 disabled:opacity-60 disabled:cursor-not-allowed"
+					class="text-2xl sm:text-3xl mt-6 text-black font-bold underline w-min self-end text-right hover:opacity-60 disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
 				>
 					Scarica
 				</button>
-
 			</div>
 		</div>
 	</body>
