@@ -1,3 +1,3 @@
-# Sgrodolix | Sgrodolibrix
-> "so basically sgrodolix is." 
+# sgrodolix • sgrodolibrix
+> "so basically sgrodolix is." \
 > ~ sgrodolix founders 
