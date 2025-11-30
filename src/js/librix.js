@@ -11,7 +11,7 @@ const books = [
     ["1984", "George Orwell"],
     ["Il giovane Holden", "J.D Salinger"],
     ["Notti bianche", "Fydor Dostoevsky"],
-    ["Uno, nessuno, centomila", "Luigi Pirandello"],
+    ["Uno, nessuno e centomila", "Luigi Pirandello"],
     ["Bartleby lo scrivano", "Herman Melville"],
     ["Maniac", "Benjamín Labatut"],
     ["Lo straniero", "Albert Camus"],
