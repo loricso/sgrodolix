@@ -17,8 +17,16 @@ const share = async () => {
     sharebtn.textContent = "Loading"
 
 
-    const res = await fetch(`${url}/quote?t=${title.value}&a=${author.value}&q=${textarea.value}`, {
-        method: "GET",
+    const res = await fetch(`${url}/quote`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            title: title.value,
+            author: author.value,
+            quote: textarea.value
+        })
     })
 
     const blob = await res.blob();
